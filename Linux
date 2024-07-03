@@ -1,0 +1,125 @@
+ Basic Questions
+
+1. What is Linux?
+   - Answer: Linux is an open-source, Unix-like operating system kernel that is used in various distributions to run applications, manage hardware, and perform computing tasks.
+
+2. What is a Linux distribution?
+   - Answer: A Linux distribution (or distro) is a version of the Linux operating system that includes the Linux kernel, system utilities, applications, and often a package manager. Examples include Ubuntu, Fedora, and CentOS.
+
+3. How do you check the current Linux kernel version?
+   - Answer: Use the command `uname -r`.
+
+4. What is the difference between Linux and Unix?
+   - Answer: Unix is a proprietary operating system originally developed in the 1970s, while Linux is an open-source clone of Unix that was created in the early 1990s. Linux is more widely used and has more distributions than Unix.
+
+5. What are some popular Linux commands?
+   - Answer: Popular Linux commands include `ls` (list directory contents), `cd` (change directory), `pwd` (print working directory), `cp` (copy files), `mv` (move/rename files), `rm` (remove files), `touch` (create an empty file), `mkdir` (make directory), and `chmod` (change file permissions).
+
+6. How do you change file permissions in Linux?
+   - Answer: Use the `chmod` command followed by the permission settings and the file name, e.g., `chmod 755 filename`.
+
+7. How do you view the contents of a file in Linux?
+   - Answer: You can use commands like `cat`, `more`, `less`, `head`, and `tail` to view file contents.
+
+8. What is a shell in Linux?
+   - Answer: A shell is a command-line interpreter that provides a user interface for the Linux operating system. Common shells include Bash, Zsh, and Fish.
+
+9. What is the purpose of the `sudo` command?
+   - Answer: The `sudo` command allows a permitted user to execute a command as the superuser or another user, as specified by the security policy.
+
+10. What is a package manager in Linux?
+    - Answer: A package manager is a tool that automates the process of installing, upgrading, configuring, and removing software packages. Examples include `apt` for Debian-based systems and `yum` for Red Hat-based systems.
+ Intermediate Questions
+
+11. How do you find files in Linux?
+    - Answer: Use the `find` command to search for files and directories within the file system.
+
+12. How do you check disk usage in Linux?
+    - Answer: Use the `df` command to check disk space usage and the `du` command to check directory space usage.
+
+13. What is the purpose of the `grep` command?
+    - Answer: The `grep` command searches for patterns within files using regular expressions.
+
+14. How do you display running processes in Linux?
+    - Answer: Use the `ps` command to display running processes or the `top` command for an interactive view.
+
+15. How do you kill a process in Linux?
+    - Answer: Use the `kill` command followed by the process ID (PID), e.g., `kill 1234`.
+
+16. What is a symbolic link in Linux?
+    - Answer: A symbolic link (or symlink) is a type of file that points to another file or directory. Use `ln -s target link_name` to create a symlink.
+
+17. How do you compress and decompress files in Linux?
+    - Answer: Use `tar`, `gzip`, `bzip2`, and `zip` for compression and `tar`, `gunzip`, `bunzip2`, and `unzip` for decompression.
+
+18. What is a cron job in Linux?
+    - Answer: A cron job is a scheduled task that runs at specified intervals using the `cron` daemon.
+
+19. How do you view and edit crontab entries?
+    - Answer: Use the `crontab -l` command to view and `crontab -e` to edit crontab entries.
+
+20. What is the purpose of the `chown` command?
+    - Answer: The `chown` command changes the ownership of a file or directory.
+ Advanced Questions
+
+21. What is the purpose of the `/etc/fstab` file?
+    - Answer: The `/etc/fstab` file contains information about disk drives and partitions that should be mounted at boot time.
+
+22. What is the difference between hard and soft links?
+    - Answer: A hard link is a direct reference to the data on the disk, while a soft link (symlink) is a pointer to another file or directory.
+
+23. How do you configure network settings in Linux?
+    - Answer: Network settings can be configured using files like `/etc/network/interfaces` (Debian-based) or `/etc/sysconfig/network-scripts/ifcfg-<interface>` (Red Hat-based), or using tools like `nmcli` or `ifconfig`.
+
+24. What is the purpose of the `iptables` command?
+    - Answer: `iptables` is used to set up, maintain, and inspect the IP packet filter rules in the Linux kernel.
+
+25. How do you secure SSH access on a Linux server?
+    - Answer: Secure SSH access by configuring `/etc/ssh/sshd_config`, using key-based authentication, disabling root login, changing the default port, and using fail2ban.
+
+26. What is the difference between `apt-get` and `apt`?
+    - Answer: `apt-get` is a lower-level package management tool, while `apt` is a higher-level interface that integrates features from `apt-get` and `apt-cache`.
+
+27. What is LVM in Linux?
+    - Answer: LVM (Logical Volume Manager) allows for flexible disk management by creating logical volumes that can be resized and moved without unmounting filesystems.
+
+28. How do you create and mount a new filesystem in Linux?
+    - Answer: Use `mkfs` to create a new filesystem, then use `mount` to mount it, e.g., `mkfs.ext4 /dev/sdb1` followed by `mount /dev/sdb1 /mnt`.
+
+29. What are `systemd` and `init`?
+    - Answer: `systemd` and `init` are system and service managers. `systemd` is a newer, more feature-rich replacement for the traditional `init` system.
+
+30. How do you manage services with `systemd`?
+    - Answer: Use `systemctl` to manage services, e.g., `systemctl start service_name`, `systemctl stop service_name`, `systemctl enable service_name`, and `systemctl status service_name`.
+ Scenario-Based Questions
+
+31. How do you recover a deleted file in Linux?
+    - Answer: Recovering a deleted file can be complex and may involve using tools like `extundelete` or `testdisk`, or restoring from a backup if available.
+
+32. What steps would you take if a disk is full on a Linux system?
+    - Answer: Identify large files using `du`, clean up unnecessary files, check for log rotation, and consider extending disk space using LVM or adding more storage.
+
+33. How do you diagnose a system performance issue in Linux?
+    - Answer: Use tools like `top`, `htop`, `vmstat`, `iostat`, `sar`, and `dstat` to monitor CPU, memory, disk I/O, and network usage.
+
+34. How do you set up a basic firewall using `ufw` on Ubuntu?
+    - Answer: Enable `ufw` with `ufw enable`, allow necessary services with `ufw allow <service/port>`, and check the status with `ufw status`.
+
+35. How do you configure a static IP address in Linux?
+    - Answer: Edit the network configuration file (e.g., `/etc/network/interfaces` for Debian-based or `/etc/sysconfig/network-scripts/ifcfg-<interface>` for Red Hat-based), and restart the network service.
+ Miscellaneous Questions
+
+36. What is the purpose of the `/etc/passwd` file?
+    - Answer: The `/etc/passwd` file contains user account information, including username, user ID, group ID, home directory, and shell.
+
+37. How do you change the default shell for a user in Linux?
+    - Answer: Use the `chsh` command, e.g., `chsh -s /bin/bash username`.
+
+38. What is `NFS` and how do you use it in Linux?
+    - Answer: NFS (Network File System) allows file sharing over a network. Configure `/etc/exports` on the server and use `mount` on the client.
+
+39. How do you enable and disable user accounts in Linux?
+    - Answer: Use `usermod -L username` to disable and `usermod -U username` to enable user accounts.
+
+40. What is the difference between `su` and `sudo`?
+    - Answer: `su` switches the user context, often to root, requiring the root password, while `sudo` executes a single command
