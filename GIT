@@ -1,0 +1,163 @@
+
+ Basic Questions
+
+1. What is Git?
+   - Answer: Git is a distributed version control system used to track changes in source code during software development.
+
+2. What are the advantages of using Git?
+   - Answer: Advantages include distributed development, support for non-linear development, efficient handling of large projects, and strong community support.
+
+3. Explain the difference between Git and GitHub.
+   - Answer: Git is a version control system, while GitHub is a cloud-based hosting service for Git repositories.
+
+4. What is a repository in Git?
+   - Answer: A repository (or repo) is a storage location for software packages, where Git keeps all the project files and the entire revision history.
+
+5. What is a commit in Git?
+   - Answer: A commit is a snapshot of the changes in the repository, serving as a record of what changes were made and by whom.
+
+6. How do you create a new Git repository?
+   - Answer: Use the command `git init` to initialize a new repository.
+
+7. How do you clone a repository?
+   - Answer: Use the command `git clone <repository_url>` to create a local copy of a remote repository.
+
+8. What is a branch in Git?
+   - Answer: A branch in Git is a pointer to a specific commit, allowing you to work on different versions of a project simultaneously.
+
+9. How do you create a new branch in Git?
+   - Answer: Use the command `git branch <branch_name>` to create a new branch.
+
+10. How do you switch branches in Git?
+    - Answer: Use the command `git checkout <branch_name>` to switch to another branch.
+
+ Intermediate Questions
+
+11. What is the purpose of `git merge`?
+    - Answer: `git merge` is used to combine the changes from one branch into another.
+
+12. How do you resolve merge conflicts in Git?
+    - Answer: Identify conflicting files, manually edit them to resolve conflicts, then use `git add <file_name>` and `git commit` to finalize the merge.
+
+13. What is `git pull`?
+    - Answer: `git pull` is a command that fetches changes from a remote repository and merges them into your local branch.
+
+14. What is `git push`?
+    - Answer: `git push` is a command that uploads your local commits to a remote repository.
+
+15. How do you delete a branch in Git?
+    - Answer: Use `git branch -d <branch_name>` to delete a branch locally and `git push origin --delete <branch_name>` to delete it remotely.
+
+16. What is a remote repository in Git?
+    - Answer: A remote repository is a version of your project that is hosted on the internet or another network.
+
+17. How do you add a remote repository in Git?
+    - Answer: Use `git remote add <name> <url>` to add a remote repository.
+
+18. What is the difference between `git fetch` and `git pull`?
+    - Answer: `git fetch` retrieves updates from a remote repository but does not merge them, whereas `git pull` retrieves and merges the updates.
+
+19. How do you view the commit history in Git?
+    - Answer: Use `git log` to view the commit history.
+
+20. What is `git rebase`?
+    - Answer: `git rebase` is a command that moves or combines a sequence of commits to a new base commit.
+
+ Advanced Questions
+
+21. What are Git tags?
+    - Answer: Tags are used to mark specific points in the commit history as important, usually to mark release points.
+
+22. How do you create a tag in Git?
+    - Answer: Use `git tag <tag_name>` to create a new tag.
+
+23. What is a submodule in Git?
+    - Answer: A submodule is a repository inside another repository, allowing you to keep separate projects together.
+
+24. How do you add a submodule in Git?
+    - Answer: Use `git submodule add <repository_url>` to add a submodule.
+
+25. What is `git stash`?
+    - Answer: `git stash` is a command that temporarily shelves (or stashes) changes you've made to your working directory.
+
+26. How do you apply stashed changes in Git?
+    - Answer: Use `git stash apply` to apply stashed changes.
+
+27. What is `git cherry-pick`?
+    - Answer: `git cherry-pick` is a command that allows you to apply changes from a specific commit to your current branch.
+
+28. How do you squash commits in Git?
+    - Answer: Use an interactive rebase with `git rebase -i <base_commit>` and mark the commits you want to squash.
+
+29. What is the difference between `git reset` and `git revert`?
+    - Answer: `git reset` moves the HEAD and changes the commit history, whereas `git revert` creates a new commit that undoes changes from a previous commit.
+
+30. How do you reset a file to its previous state in Git?
+    - Answer: Use `git checkout <commit_hash> -- <file_name>` to reset a file to its state at a previous commit.
+
+ Expert Questions
+
+31. What is a Git hook?
+    - Answer: Git hooks are scripts that run automatically on certain Git events, like committing or merging.
+
+32. How do you configure a Git hook?
+    - Answer: Place the script in the `.git/hooks` directory with the appropriate name, like `pre-commit` for a pre-commit hook.
+
+33. What is `git blame`?
+    - Answer: `git blame` is a command that shows the author, revision, and timestamp for each line in a file.
+
+34. How do you bisect a bug in Git?
+    - Answer: Use `git bisect start`, `git bisect bad`, `git bisect good`, and `git bisect run` to find the commit that introduced a bug.
+
+35. What is `git diff`?
+    - Answer: `git diff` is a command that shows the differences between commits, branches, or working directory changes.
+
+36. How do you revert a commit in Git?
+    - Answer: Use `git revert <commit_hash>` to create a new commit that reverses the changes of a previous commit.
+
+37. What is `git config`?
+    - Answer: `git config` is a command to set configuration options for Git, like user name and email.
+
+38. How do you set up a global username and email in Git?
+    - Answer: Use `git config --global user.name "Your Name"` and `git config --global user.email "your.email@example.com"`.
+
+39. What is the purpose of the `.gitignore` file?
+    - Answer: The `.gitignore` file specifies intentionally untracked files to ignore.
+
+40. How do you remove a file from the Git staging area?
+    - Answer: Use `git reset HEAD <file_name>` to unstage a file.
+
+ Scenario-Based Questions
+
+41. How do you handle a situation where you need to work on a new feature but the main branch is not stable?
+    - Answer: Create a new branch from the last stable commit or from a stable release tag and work on the feature there.
+
+42. What steps would you take if you realize you've committed sensitive data?
+    - Answer: Remove the sensitive data, create a new commit, and use `git rebase` or `git filter-branch` to remove it from the commit history, then force push the changes.
+
+43. How do you update a forked repository?
+    - Answer: Add the original repository as a remote, fetch updates, merge them into your fork, and push the changes.
+
+44. How would you cherry-pick a commit from one branch to another?
+    - Answer: Use `git checkout <target_branch>` followed by `git cherry-pick <commit_hash>`.
+
+45. What would you do if you accidentally committed to the wrong branch?
+    - Answer: Create a new branch from that commit and then reset the original branch to the state before the commit.
+
+ Miscellaneous Questions
+
+46. Explain the significance of the HEAD pointer in Git.
+    - Answer: The HEAD pointer represents the current working branch and commit.
+
+47. How do you display the status of your working directory and staging area?
+    - Answer: Use the `git status` command.
+
+48. What is the difference between a fast-forward merge and a three-way merge?
+    - Answer: A fast-forward merge moves the branch pointer forward without creating a new commit, while a three-way merge creates a new commit combining changes from three points.
+
+49. How do you configure Git to ignore file mode changes?
+    - Answer: Use `git config core.fileMode false` to ignore file mode changes.
+
+50. What is the difference between `git clean` and `git reset`?
+    - Answer: `git clean` removes untracked files from the working directory, while `git reset` moves the HEAD and possibly modifies the index and working directory.
+
