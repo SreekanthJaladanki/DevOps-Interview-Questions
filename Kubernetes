@@ -1,0 +1,165 @@
+Basic Questions
+
+1. What is Kubernetes?
+   - Answer: Kubernetes is an open-source container orchestration platform for automating the deployment, scaling, and management of containerized applications.
+
+2. What are the main components of Kubernetes architecture?
+   - Answer: The main components include the Master Node (API Server, Controller Manager, Scheduler, etcd) and Worker Nodes (Kubelet, Kube Proxy, Container Runtime).
+
+3. What is a pod in Kubernetes?
+   - Answer: A pod is the smallest and simplest Kubernetes object. It represents a single instance of a running process in a cluster and can contain one or more containers.
+
+4. What is a node in Kubernetes?
+   - Answer: A node is a worker machine in Kubernetes, which can be a virtual or physical machine. Each node contains the services necessary to run pods.
+
+5. What is etcd in Kubernetes?
+   - Answer: etcd is a distributed key-value store used by Kubernetes to store all cluster data, ensuring configuration consistency across the cluster.
+
+6. What is the Kubernetes API server?
+   - Answer: The API server is a component of the Kubernetes master that exposes the Kubernetes API. It is the entry point for all administrative tasks.
+
+7. What is a ReplicaSet in Kubernetes?
+   - Answer: A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+
+8. What is a Deployment in Kubernetes?
+   - Answer: A Deployment provides declarative updates for pods and ReplicaSets. It ensures the desired state of an application is achieved and maintained.
+
+9. What is a Service in Kubernetes?
+   - Answer: A Service is an abstraction that defines a logical set of pods and a policy by which to access them, often providing a stable IP address and DNS name.
+
+10. What is the purpose of a Namespace in Kubernetes?
+    - Answer: Namespaces are used to divide cluster resources between multiple users or teams, providing a scope for names and isolating resources.
+
+Intermediate Questions
+
+11. What is a ConfigMap in Kubernetes?
+    - Answer: A ConfigMap is an API object used to store non-confidential configuration data in key-value pairs, which can be consumed by pods.
+
+12. What is a Secret in Kubernetes?
+    - Answer: A Secret is an object that contains sensitive data such as passwords, OAuth tokens, and SSH keys. Secrets are intended to hold confidential information.
+
+13. What is a StatefulSet in Kubernetes?
+    - Answer: A StatefulSet is a workload API object used to manage stateful applications, ensuring that pods are given unique, stable network identities and persistent storage.
+
+14. What is a DaemonSet in Kubernetes?
+    - Answer: A DaemonSet ensures that all or some nodes run a copy of a pod. It is commonly used for deploying system-level services.
+
+15. What is the Kubernetes Scheduler?
+    - Answer: The Scheduler is a component of the Kubernetes master responsible for selecting which node a pod should run on based on resource requirements and other constraints.
+
+16. What is a PersistentVolume (PV) in Kubernetes?
+    - Answer: A PersistentVolume is a piece of storage in the cluster that has been provisioned by an administrator or dynamically by a storage class. It is independent of the lifecycle of any individual pod.
+
+17. What is a PersistentVolumeClaim (PVC) in Kubernetes?
+    - Answer: A PersistentVolumeClaim is a request for storage by a user. It binds to a PersistentVolume, abstracting the details of the underlying storage.
+
+18. What is a Kubernetes Ingress?
+    - Answer: An Ingress is an API object that manages external access to services in a cluster, typically HTTP, providing load balancing, SSL termination, and name-based virtual hosting.
+
+19. What is a Helm in Kubernetes?
+    - Answer: Helm is a package manager for Kubernetes that helps define, install, and upgrade complex Kubernetes applications using Helm Charts.
+
+20. What is the difference between a Deployment and a StatefulSet?
+    - Answer: Deployments manage stateless applications, ensuring a specified number of replicas are running, while StatefulSets manage stateful applications, providing stable network identities and persistent storage.
+
+Advanced Questions
+
+21. How do you perform a rolling update in Kubernetes?
+    - Answer: Use the `kubectl set image` command to update the image of a deployment, which triggers a rolling update to gradually replace old pods with new ones.
+
+22. What is a Kubernetes Custom Resource Definition (CRD)?
+    - Answer: A CRD allows you to define custom resources that extend Kubernetes' functionality, enabling users to create and manage their own API objects.
+
+23. How do you scale a Kubernetes Deployment?
+    - Answer: Use the `kubectl scale` command followed by the deployment name and the desired replica count, e.g., `kubectl scale deployment <deployment_name> --replicas=5`.
+
+24. What is the role of kube-proxy in Kubernetes?
+    - Answer: `kube-proxy` is a network proxy that runs on each node in the cluster. It maintains network rules on nodes to allow network communication to your pods from inside or outside of the cluster.
+
+25. What is a Kubernetes Operator?
+    - Answer: A Kubernetes Operator is a method of packaging, deploying, and managing a Kubernetes application. It uses custom controllers to manage the state of complex applications.
+
+26. What is Horizontal Pod Autoscaler (HPA)?
+    - Answer: The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment or replica set based on observed CPU utilization or other select metrics.
+
+27. What is the difference between Horizontal Pod Autoscaler and Vertical Pod Autoscaler?
+    - Answer: HPA scales the number of pod replicas based on resource usage, while VPA adjusts the resource limits and requests of the containers in pods to match actual usage.
+
+28. What is a Pod Disruption Budget (PDB)?
+    - Answer: A PDB is an object that specifies the minimum number or percentage of replicas of a service that must be up and running during voluntary disruptions.
+
+29. What is Kubectl?
+    - Answer: `kubectl` is the command-line tool for interacting with the Kubernetes API server. It is used to deploy and manage applications, inspect and manage cluster resources, and view logs.
+
+30. How do you monitor a Kubernetes cluster?
+    - Answer: Monitoring a Kubernetes cluster can be done using tools like Prometheus, Grafana, Kubernetes Dashboard, and other logging and monitoring solutions.
+
+### Scenario-Based Questions
+
+31. How do you handle node failures in a Kubernetes cluster?
+    - Answer: Kubernetes can automatically reschedule the pods from the failed node to other healthy nodes. You can set up node health checks and use tools like Cluster Autoscaler to ensure high availability.
+
+32. How do you handle application configuration changes in Kubernetes?
+    - Answer: Use ConfigMaps and Secrets to manage and pass configuration data to your applications. Update the ConfigMaps or Secrets and restart the pods to apply the changes.
+
+33. How do you manage resource limits and requests in Kubernetes?
+    - Answer: Define resource limits and requests in the pod specification to ensure that containers get the necessary resources and to prevent resource contention.
+
+34. What steps would you take if a pod is stuck in a 'CrashLoopBackOff' state?
+    - Answer: Check the pod logs using `kubectl logs <pod_name>`, inspect the events using `kubectl describe pod <pod_name>`, and investigate any configuration or application issues.
+
+35. How do you roll back a failed deployment in Kubernetes?
+    - Answer: Use the `kubectl rollout undo deployment/<deployment_name>` command to revert to a previous revision of the deployment.
+
+### Miscellaneous Questions
+
+36. What is a Kubernetes context?
+    - Answer: A Kubernetes context is a configuration that contains cluster, namespace, and user information, making it easier to switch between different clusters and namespaces.
+
+37. How do you configure RBAC in Kubernetes?
+    - Answer: Use Role-Based Access Control (RBAC) to manage permissions within your cluster by creating roles, cluster roles, role bindings, and cluster role bindings.
+
+38. What is the purpose of the Kubernetes Dashboard?
+    - Answer: The Kubernetes Dashboard is a web-based UI for managing and monitoring cluster resources, providing an easy-to-use interface for common administrative tasks.
+
+39. What is the `kubectl apply` command used for?
+    - Answer: The `kubectl apply` command is used to create or update resources in a declarative manner using configuration files.
+
+40. What are taints and tolerations in Kubernetes?
+    - Answer: Taints are applied to nodes to prevent certain pods from being scheduled on them, while tolerations are applied to pods to allow them to be scheduled on nodes with matching taints.
+
+### Expert Questions
+
+41. How do you set up a multi-node Kubernetes cluster?
+    - Answer: Use tools like kubeadm, kops, or managed Kubernetes services like GKE, EKS, or AKS to set up and manage multi-node clusters.
+
+42. What is the purpose of the Kubernetes Admission Controllers?
+    - Answer: Admission controllers are plugins that govern and enforce how the cluster is used, intercepting requests to the Kubernetes API server after authentication and authorization but before the data is persisted.
+
+43. How do you use Persistent Volumes with dynamic provisioning in Kubernetes?
+    - Answer: Use StorageClasses to define the provisioner and parameters for dynamic provisioning, and create PersistentVolumeClaims to request storage.
+
+44. What is the role of the Kubernetes Controller Manager?
+    - Answer: The Controller Manager is a component that runs controller processes, managing the state of various components like nodes, endpoints, and replication controllers.
+
+45. How do you secure a Kubernetes cluster?
+    - Answer: Implement security best practices such as using RBAC, network policies, securing the Kubernetes API server, using namespaces, enabling audit logging, and regularly updating components.
+
+### Miscellaneous Questions
+
+46. What is a Canary Deployment in Kubernetes?
+    - Answer: A Canary Deployment is a technique where a new version of an application is gradually rolled out to a subset of users before full deployment, allowing for monitoring and rollback if necessary.
+
+47. What is a Blue-Green Deployment in Kubernetes?
+    - Answer: A Blue-Green Deployment is a technique where two identical environments (blue and green) are maintained, allowing for seamless switching between them during deployments.
+
+48. How do you handle secrets in Kubernetes?
+    - Answer: Use Kubernetes Secrets to securely store and manage sensitive information such as passwords, tokens, and keys, and mount them as volumes or environment variables in pods.
+
+49. What is the `kubectl port-forward` command used for?
+    - Answer: The `kubectl port-forward` command is used to forward one or more local ports to a pod, allowing you to access the pod's services locally.
+
+50. What are Init Containers in Kubernetes?
+    - Answer: Init Containers are specialized containers that run before app containers in a pod, performing initialization tasks such as setting up the environment or loading configurations.
+
+These questions and answers cover a range of topics and complexity levels, helping you prepare for various aspects of Kubernetes interviews.
