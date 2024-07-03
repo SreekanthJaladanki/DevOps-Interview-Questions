@@ -1,0 +1,157 @@
+ Basic Questions
+
+1. What is Jenkins?
+   - Answer: Jenkins is an open-source automation server used for continuous integration and continuous delivery (CI/CD) of software projects.
+
+2. What are the key features of Jenkins?
+   - Answer: Key features include easy installation, extensibility through plugins, distributed builds, support for various version control systems, and pipeline support.
+
+3. How do you install Jenkins?
+   - Answer: Jenkins can be installed using package managers like `apt` or `yum`, by downloading the .war file, or using Docker.
+
+4. What is a Jenkins job?
+   - Answer: A Jenkins job is a task or set of tasks configured to run within Jenkins, such as building software, running tests, or deploying applications.
+
+5. What is a Jenkins pipeline?
+   - Answer: A Jenkins pipeline is a suite of plugins that supports implementing and integrating continuous delivery pipelines into Jenkins.
+
+6. What is a Jenkinsfile?
+   - Answer: A Jenkinsfile is a text file that contains the definition of a Jenkins pipeline and is typically stored in the source control repository.
+
+7. What are the types of Jenkins pipelines?
+   - Answer: There are two types: Declarative Pipelines and Scripted Pipelines.
+
+8. How do you create a Jenkins pipeline?
+   - Answer: Create a Jenkinsfile with pipeline syntax and commit it to the repository, then create a pipeline job in Jenkins and point it to the Jenkinsfile.
+
+9. What is a node in Jenkins?
+   - Answer: A node is a machine that is part of the Jenkins environment capable of executing a pipeline.
+
+10. What is an agent in Jenkins?
+    - Answer: An agent is a specific environment where a Jenkins pipeline or project is executed, often representing a specific node or executor.
+ Intermediate Questions
+
+11. How do you manage plugins in Jenkins?
+    - Answer: Plugins can be managed from the Jenkins dashboard by navigating to "Manage Jenkins" -> "Manage Plugins."
+
+12. How do you back up Jenkins?
+    - Answer: Back up the Jenkins home directory, including configuration files, job configurations, and plugin data.
+
+13. What is Jenkins Blue Ocean?
+    - Answer: Blue Ocean is a project that provides a modern, user-friendly interface for Jenkins, focusing on visualizing continuous delivery pipelines.
+
+14. How do you trigger a Jenkins build automatically?
+    - Answer: Use triggers such as Poll SCM, webhooks from source control systems like GitHub, or scheduled builds using cron syntax.
+
+15. What is the purpose of Jenkins agents (formerly known as slaves)?
+    - Answer: Agents are used to execute jobs on different environments or machines to distribute the workload and manage resource usage.
+
+16. How do you secure Jenkins?
+    - Answer: Implement security by enabling authentication, configuring authorization, setting up role-based access control, and securing the Jenkins instance with HTTPS.
+
+17. What is the difference between Declarative and Scripted Pipelines?
+    - Answer: Declarative Pipelines provide a more structured and simpler syntax, while Scripted Pipelines offer more flexibility and are written in Groovy.
+
+18. How do you configure Jenkins to use a specific JDK?
+    - Answer: Configure the JDK in the global tool configuration and specify it in the job configuration or Jenkinsfile.
+
+19. How do you handle parallel execution in Jenkins pipelines?
+    - Answer: Use the `parallel` block in a Declarative Pipeline or the `parallel` method in a Scripted Pipeline.
+
+20. What are post conditions in a Jenkins pipeline?
+    - Answer: Post conditions, defined in the `post` block, specify actions to be taken after the pipeline execution, such as `always`, `success`, `failure`, and `unstable`.
+ Advanced Questions
+
+21. How do you integrate Jenkins with Git?
+    - Answer: Use the Git plugin, configure the repository URL in the job or pipeline, and set up credentials for accessing the repository.
+
+22. What is the purpose of the `archiveArtifacts` step in Jenkins?
+    - Answer: The `archiveArtifacts` step saves files produced during a build for later retrieval.
+
+23. How do you configure email notifications in Jenkins?
+    - Answer: Use the Email Extension plugin, configure SMTP settings, and set up email notifications in the job or pipeline configuration.
+
+24. What is a Jenkins shared library?
+    - Answer: A shared library is a collection of reusable pipeline code stored in a Git repository, which can be loaded and used across multiple Jenkins pipelines.
+
+25. How do you handle environment variables in Jenkins?
+    - Answer: Use the `env` object in pipelines or configure environment variables in the job or global configuration.
+
+26. What is the `stash` and `unstash` feature in Jenkins?
+    - Answer: `stash` saves files for later use in the same pipeline, while `unstash` retrieves those files.
+
+27. How do you configure Jenkins for high availability?
+    - Answer: Implement high availability by setting up a master-slave architecture, using load balancers, and having backup and restore mechanisms.
+
+28. How do you use Docker with Jenkins?
+    - Answer: Use the Docker plugin to run builds inside Docker containers, or use Docker as a build agent.
+
+29. What is the `input` step in a Jenkins pipeline?
+    - Answer: The `input` step pauses the pipeline and waits for user input or approval to continue.
+
+30. How do you configure Jenkins to use a proxy server?
+    - Answer: Configure the proxy settings in the Jenkins global configuration under "Manage Jenkins" -> "Manage Plugins" -> "Advanced" tab.
+ Scenario-Based Questions
+
+31. How do you deploy an application using Jenkins?
+    - Answer: Create a pipeline that builds the application, runs tests, packages the application, and uses deployment tools or scripts to deploy to the target environment.
+
+32. How do you handle build dependencies in Jenkins?
+    - Answer: Use the `build` step to trigger dependent jobs, or configure build triggers to run jobs sequentially.
+
+33. What steps would you take if a Jenkins build fails?
+    - Answer: Investigate the build logs, check for error messages, ensure environment and dependencies are correct, and rerun the build after fixing issues.
+
+34. How do you roll back a deployment using Jenkins?
+    - Answer: Create a pipeline stage that deploys a previous stable build or uses version control to revert changes and redeploy.
+
+35. How do you use Jenkins to automate testing?
+    - Answer: Configure jobs or pipelines to run unit tests, integration tests, and end-to-end tests using testing frameworks and tools.
+ Miscellaneous Questions
+
+36. What is the purpose of the Jenkins Script Console?
+    - Answer: The Script Console allows administrators to run Groovy scripts for managing and configuring Jenkins.
+
+37. How do you monitor Jenkins performance?
+    - Answer: Use monitoring plugins, check system logs, monitor resource usage, and set up alerts for performance issues.
+
+38. How do you integrate Jenkins with other CI/CD tools?
+    - Answer: Use plugins and APIs to integrate Jenkins with tools like Git, Docker, Kubernetes, Maven, and others.
+
+39. What is the role of a Jenkins administrator?
+    - Answer: A Jenkins administrator is responsible for managing the Jenkins environment, configuring jobs, managing plugins, and ensuring security and performance.
+
+40. How do you export and import Jenkins jobs?
+    - Answer: Use the Job Import plugin or manually copy job configurations between Jenkins instances.
+ Expert Questions
+
+41. How do you use Jenkins for continuous integration?
+    - Answer: Set up jobs or pipelines to automatically build, test, and integrate code changes from version control repositories.
+
+42. How do you use Jenkins for continuous delivery?
+    - Answer: Create pipelines that automate the entire software delivery process, including building, testing, deploying, and delivering applications to production.
+
+43. What is the Jenkins REST API?
+    - Answer: The Jenkins REST API allows programmatic access to Jenkins resources and operations, enabling integration with other systems and automation tools.
+
+44. How do you secure Jenkins credentials?
+    - Answer: Use the Credentials plugin to securely store and manage credentials, and restrict access using role-based security.
+
+45. What is the purpose of the `when` directive in a Jenkins pipeline?
+    - Answer: The `when` directive controls the execution of a pipeline stage based on conditions, such as branch name, environment variables, or build parameters.
+ Miscellaneous Questions
+
+46. How do you integrate Jenkins with Kubernetes?
+    - Answer: Use the Kubernetes plugin to deploy Jenkins agents as Kubernetes pods and run builds within the Kubernetes cluster.
+
+47. What is the Jenkins Pipeline Linter?
+    - Answer: The Pipeline Linter validates the syntax and structure of a Jenkinsfile before running the pipeline.
+
+48. How do you handle secrets in Jenkins?
+    - Answer: Use the Credentials plugin or third-party tools like HashiCorp Vault to securely manage and inject secrets into Jenkins jobs and pipelines.
+
+49. What is the purpose of the `checkout` step in a Jenkins pipeline?
+    - Answer: The `checkout` step retrieves source code from a version control system and places it in the workspace.
+
+50. How do you handle large-scale Jenkins deployments?
+    - Answer: Use a master-agent architecture
